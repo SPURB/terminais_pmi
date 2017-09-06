@@ -1,0 +1,14 @@
+﻿primeiro commit
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#	modified:   index.php
+#	modified:   terminais_pmi.js
+#
+# Untracked files:
+#	1ul0xana.o0m.txt
+#	wkeijhtz.4o4.txt
+#	wtqi2r5p.b00.txt
+#
+
