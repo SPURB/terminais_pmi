@@ -1,3 +1,5 @@
+var src_path = "../wp-content/uploads/2017/07/19/terminais_pmi/";
+
 // presets openlayers
 var projection = ol.proj.get('EPSG:3857');
 var scaleLineControl = new ol.control.ScaleLine();
@@ -13,14 +15,14 @@ var raster = new ol.layer.Tile({
 
 var perimetros = new ol.layer.Vector({
     source: new ol.source.Vector({
-        url: './perimetros_pmi-terminais.kml',
+        url: src_path+'./perimetros_pmi-terminais.kml',
         format: new ol.format.KML()
     })
 });
 
 var rmsp = new ol.layer.Vector({
     source: new ol.source.Vector({ 
-        url: './limites_rmsp.kml',
+        url: src_path+'./limites_rmsp.kml',
         format: new ol.format.KML()
     })
 });
@@ -52,6 +54,7 @@ var map = new ol.Map({
   view: view
 });
 
+
 var conteudo_botoes_ficha = new Vue({
     el:"#conteudo_botoes_ficha",
     data:{
@@ -70,20 +73,20 @@ var conteudo_botoes_ficha = new Vue({
         '#F48120' //Oeste 8
         ],
         src_minimapas:[
-        'minimapa_default0.png',
-        'minimapa_noroeste1.png',
-        'minimapa_norte2.png',
-        'minimapa_nordeste3.png',
-        'minimapa_leste4.png',
-        'minimapa_sudeste5.png',
-        'minimapa_sul6.png',
-        'minimapa_sudoeste7.png',
-        'minimapa_oeste8.png',
-        'minimapa_centro9.png',
-        'minimapa_base.png',
-        'minimapa_areas.png',
-        'minimapa_ponto.png',
-        'minimapa_ponto_invisivel.png'
+        src_path + 'minimapa_default0.png',
+        src_path + 'minimapa_noroeste1.png',
+        src_path + 'minimapa_norte2.png',
+        src_path + 'minimapa_nordeste3.png',
+        src_path + 'minimapa_leste4.png',
+        src_path + 'minimapa_sudeste5.png',
+        src_path + 'minimapa_sul6.png',
+        src_path + 'minimapa_sudoeste7.png',
+        src_path + 'minimapa_oeste8.png',
+        src_path + 'minimapa_centro9.png',
+        src_path + 'minimapa_base.png',
+        src_path + 'minimapa_areas.png',
+        src_path + 'minimapa_ponto.png',
+        src_path + 'minimapa_ponto_invisivel.png'
         ],
         hover_btn:'',
         hover_btn_ponto:'',
@@ -1254,7 +1257,7 @@ var conteudo_pos_clique = new Vue({
         },
         pdf_link: function(){
             var terminal = conteudo_botoes_ficha.nome
-            var src = './publicacao/'
+            var src = src_path + 'publicacao/'
             switch(terminal){
                 case 'Terminal Pirituba': 
                     return src + this.pdf_img_src[0][0];break
@@ -1333,7 +1336,8 @@ var conteudo_pos_clique = new Vue({
         },
         img_publicacao: function(){
             var terminal = conteudo_botoes_ficha.nome
-            var src = './publicacao/'
+            var src = src_path + 'publicacao/'
+
             switch(terminal){
                 case 'Terminal Pirituba': 
                     return src + this.pdf_img_src[0][1];break
@@ -1415,4 +1419,4 @@ var conteudo_pos_clique = new Vue({
 });
 
 /* smooth-scroll.js v1.2 */
-(function(e,t){"use strict";var n=0,r=850,i=15,s=document.getElementsByTagName("a"),o;for(var u=0;u<s.length;u++){o=s[u].attributes.href===t?null:s[u].attributes.href.nodeValue.toString();if(o!==null&&o.length>1&&o.indexOf("#")!=-1){s[u].onclick=function(){var n,s=this.attributes.href.nodeValue.toString(),o=s.substr(0,s.indexOf("#")),u=s.substr(s.indexOf("#")+1);if(n=document.getElementById(u)){var l=(r-r%i)/i,c=f(),h=(a(n)-c)/l;if(e.history&&typeof e.history.pushState=="function")e.history.pushState({},t,o+"#"+u);for(var p=1;p<=l;p++){(function(){var t=h*p;setTimeout(function(){e.scrollTo(0,t+c)},i*p)})()}return false}}}}var a=function(e){var r=n*-1;while(e.offsetParent!=t&&e.offsetParent!=null){r+=e.offsetTop+(e.clientTop!=null?e.clientTop:0);e=e.offsetParent}return r};var f=function(){return document.documentElement.scrollTop!==t?document.documentElement.scrollTop:document.body.scrollTop}})(window);
+(function(e,t){"use strict";var n=0,r=850,i=166,s=document.getElementsByTagName("a"),o;for(var u=0;u<s.length;u++){o=s[u].attributes.href===t?null:s[u].attributes.href.nodeValue.toString();if(o!==null&&o.length>1&&o.indexOf("#")!=-1){s[u].onclick=function(){var n,s=this.attributes.href.nodeValue.toString(),o=s.substr(0,s.indexOf("#")),u=s.substr(s.indexOf("#")+1);if(n=document.getElementById(u)){var l=(r-r%i)/i,c=f(),h=(a(n)-c)/l;if(e.history&&typeof e.history.pushState=="function")e.history.pushState({},t,o+"#"+u);for(var p=1;p<=l;p++){(function(){var t=h*p;setTimeout(function(){e.scrollTo(0,t+c)},i*p)})()}return false}}}}var a=function(e){var r=n*-1;while(e.offsetParent!=t&&e.offsetParent!=null){r+=e.offsetTop+(e.clientTop!=null?e.clientTop:0);e=e.offsetParent}return r};var f=function(){return document.documentElement.scrollTop!==t?document.documentElement.scrollTop:document.body.scrollTop}})(window);
