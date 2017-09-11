@@ -18,6 +18,14 @@ font-family: sans-serif;
 line-height: 1.5em
 }
 
+div#apresentacao_terminais{
+padding-bottom: 20px; 
+}
+
+div#apresentacao_terminais>h3{
+font-size: 21px
+}
+
 .ol-attribution, .ol-zoom{
 display:none;
 width: 268px

@@ -1,4 +1,4 @@
-var src_path = "../wp-content/uploads/2017/07/19/terminais_pmi/";
+var src_path = "../../wp-content/uploads/2017/07/19/terminais_pmi/";
 
 // presets openlayers
 var projection = ol.proj.get('EPSG:3857');
